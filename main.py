@@ -10,7 +10,7 @@ templates = Jinja2Templates(directory="templates")
 
 @app.get("/", response_class=HTMLResponse)
 async def read_form(request: Request):
-    return templates.TemplateResponse("form.html", {"request": request})
+    return templates.TemplateResponse("view/index.html", {"request": request})
 
 @app.post("/submit")
 async def submit_form(username: str = Form(...), password: str = Form(...)):
